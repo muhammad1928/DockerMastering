@@ -2,43 +2,39 @@
     "title": "Mastering Docker: Building, Networking, and Optimizing Containers with Multi-Stage Builds and Advanced Features",
     "description": " ",
     "details": {
-      
-      "chapters": [
+      "intro": {
+        "title": "Introduction to Docker",
+        "text": "introdocker/intro.md"
+      },
+      "steps": [
         {
-          "folder": {
-            "chapter1" : "intro.md"
-          }
+            "title": "Building and Running docker",
+            "text": "BuildingAndRunning/intro.md"
         },
         {
-            "folder": {
-              "chapter2" : "intro.md"
-            }
-          },
-          {
-            "folder": {
-              "chapter3" : "intro.md"
-            }
+            "title": "Setting up Docker Volumes for Persistent Storage",
+            "text": "DockerVolumes/intro.md"
         },
         {
-            "folder": {
-              "chapter4" : "intro.md"
-            }
+            "title": "Configuring Container Networking",
+            "text": "networking_docker.md"
         },
         {
-            "folder": {
-                "chapter5" : "intro.md"
-            }
+            "title": "Optimizing Docker Images with Multi-Stage Builds",
+            "text": "OptimizingDocker/intro.md"
         },
         {
-            "folder": {
-                "chapter6" : "intro.md"
-            }
+            "title": "Using Docker Compose for Multi-Container Applications",
+            "text": "MultiContainerApp/intro.md"
         },
         {
-            "folder": {
-                "chapter7" : "intro.md"
-            }
-        }               
+            "title": "Handling Secrets and Environment Variables in Docker",
+            "text": "SecretVariables/intro.md"
+        },
+        {
+            "title": "Implementing Health Checks for Containers",
+            "text": "ImplementingChecks/intro.md"
+        },
       ]
     },
     "backend": {
