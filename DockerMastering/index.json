@@ -23,10 +23,7 @@
             "title": "Optimizing Docker Images with Multi-Stage Builds",
             "text": "OptimizingDocker/intro.md"
         },
-        {
-            "title": "Using Docker Compose for Multi-Container Applications",
-            "text": "MultiContainerApp/intro.md"
-        },
+
         {
             "title": "Handling Secrets and Environment Variables in Docker",
             "text": "SecretVariables/intro.md"
