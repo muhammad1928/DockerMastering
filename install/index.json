@@ -2,22 +2,43 @@
     "title": "Mastering Docker: Building, Networking, and Optimizing Containers with Multi-Stage Builds and Advanced Features",
     "description": " ",
     "details": {
-      "intro": {
-        "text": "intro.md"
-      },
-      "steps": [
+      
+      "chapters": [
         {
-          "text": "install_docker.md"
+          "folder": {
+            "chapter1" : "intro.md"
+          }
         },
         {
-          "text": "building_docker.md"
+            "folder": {
+              "chapter2" : "intro.md"
+            }
+          },
+          {
+            "folder": {
+              "chapter3" : "intro.md"
+            }
         },
         {
-          "text": "networking_docker.md"
+            "folder": {
+              "chapter4" : "intro.md"
+            }
         },
         {
-          "text": "optimizing_docker.md"
-        }
+            "folder": {
+                "chapter5" : "intro.md"
+            }
+        },
+        {
+            "folder": {
+                "chapter6" : "intro.md"
+            }
+        },
+        {
+            "folder": {
+                "chapter7" : "intro.md"
+            }
+        }               
       ]
     },
     "backend": {
