@@ -8,7 +8,6 @@
       },
       "steps": [
         {
-          
             "title": "Building and Running docker",
             "text": "BuildingAndRunning/intro.md"
         },
