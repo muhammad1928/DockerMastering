@@ -34,7 +34,7 @@
         {
             "title": "Implementing Health Checks for Containers",
             "text": "ImplementingChecks/intro.md"
-        },
+        }
       ]
     },
     "backend": {
