@@ -17,7 +17,7 @@
         },
         {
             "title": "Configuring Container Networking",
-            "text": "networking_docker.md"
+            "text": "ConfigureContainer/intro.md"
         },
         {
             "title": "Optimizing Docker Images with Multi-Stage Builds",
