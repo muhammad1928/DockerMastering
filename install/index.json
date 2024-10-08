@@ -4,7 +4,7 @@
     "details": {
       "intro": {
         "title": "Introduction to Docker",
-        "text": "./introdocker/intro.md"
+        "text": "../introdocker/intro.md"
       },
       "steps": [
         {
