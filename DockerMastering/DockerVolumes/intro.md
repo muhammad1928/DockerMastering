@@ -10,10 +10,10 @@ Here’s a step-by-step guide on creating and using Docker volumes to manage per
 
 ## 1. Create a Docker Volume
 
-To create a new docker volume we use the ``` docker volume create`` 
+To create a new docker volume we use the ``docker volume create ``
 command. 
 Let’s call it:
-``` my_data_volume``
+``my_data_volume``
 
 ```bash 
 docker volume create my_data_volume
@@ -36,13 +36,13 @@ docker run -d --name my_nginx -p 8080:80 -v my_data_volume:/usr/share/nginx/html
 
 ### This is what each option does in the command:
 
-``` -d ``` runs the container in detached mode.
+- ``` -d ``` runs the container in detached mode.
 
-``` --name my_nginx``` give names to the container ``` my_nginx```.
+- ``` --name my_nginx``` give names to the container ``` my_nginx```.
 
-``` -p 8080:80``` maps port 80 on the container to port 8080 on your local machine.
+- ``` -p 8080:80``` maps port 80 on the container to port 8080 on your local machine.
 
-``` -v my_data_volume:/usr/share/nginx/html``` mounts the ``` my_data_volume``` volume to the container’s web server directory ``` (/usr/share/nginx/html)```, where Nginx serves HTML files. This ensures that any files in this directory are stored on the host in the volume and persist beyond the container’s lifecycle.
+- ``` -v my_data_volume:/usr/share/nginx/html``` mounts the ``` my_data_volume``` volume to the container’s web server directory ``` (/usr/share/nginx/html)```, where Nginx serves HTML files. This ensures that any files in this directory are stored on the host in the volume and persist beyond the container’s lifecycle.
 
 
 ## 3. Add Data to the Volume
