@@ -77,7 +77,7 @@ CMD ["python", "app.py"]
 
 ## 3. Define Health Checks in Docker Compose
 
-Create a ```bash docker-compose.yml``` file to define your application and specify the health check.
+Create a ``` docker-compose.yml``` file to define your application and specify the health check.
 ```bash 
 nano docker-compose.yml
 ```
@@ -119,13 +119,13 @@ After the containers are up, you can monitor the health status of the web servic
 ```bash 
 docker ps
 ```
-Look for the ```bash STATUS``` column. It should display ```bash healthy``` after a few intervals if everything is working fine.
+Look for the ``` STATUS``` column. It should display ``` healthy``` after a few intervals if everything is working fine.
 
-Simulate a Failure: To test the health check, you can simulate a failure by accessing the ```bash /fail``` endpoint. You can do this using a web browser or a command line:
+Simulate a Failure: To test the health check, you can simulate a failure by accessing the ``` /fail``` endpoint. You can do this using a web browser or a command line:
 ```bash 
 curl http://localhost:5000/fail
 ```
-After invoking the ```bash /fail``` endpoint, Docker will eventually mark the container as unhealthy if the health check fails consistently.
+After invoking the ``` /fail``` endpoint, Docker will eventually mark the container as unhealthy if the health check fails consistently.
 
 
 

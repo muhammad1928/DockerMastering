@@ -22,7 +22,7 @@ cd myapp
 ## 2. Create Application Files
 
 For this example, let’s set up a simple Python Flask web application and a MySQL database.
-Create ```bash app.py```
+Create ``` app.py```
 ```bash 
 nano app.py
 ```
@@ -42,7 +42,7 @@ if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
 ```
 
-Create ```bash requirements.txt``` to list the dependencies and save and close.
+Create ``` requirements.txt``` to list the dependencies and save and close.
 ```bash 
 nano requirements.txt
 ```
@@ -55,7 +55,7 @@ mysql-connector-python
 
 ## 3. Write the docker-compose.yml File
 
-Now, create a ```bash docker-compose.yml``` file that defines your services
+Now, create a ``` docker-compose.yml``` file that defines your services
 ```bash 
 nano docker-compose.yml
 ```
@@ -98,21 +98,21 @@ In your terminal, run the following command to start both services
 ```bash 
 docker-compose up
 ```
-Docker Compose will pull the images, set up the containers, and link them based on the configurations in ```bash docker-compose.yml ```
+Docker Compose will pull the images, set up the containers, and link them based on the configurations in ``` docker-compose.yml ```
 
 
 ## 5. Access the Application
 
-Once the containers are running, open a web browser or use ```bash curl``` to check the Flask app
+Once the containers are running, open a web browser or use ``` curl``` to check the Flask app
 ```bash 
 curl http://localhost:5000
 ```
-You should see the message: ```bash "Hello from Flask and MySQL!"```
+You should see the message: ``` "Hello from Flask and MySQL!"```
 
 
 ## 6. Manage the Containers
 
-To stop the application: Press ```bash CTRL+C``` in the terminal where Docker Compose is running, or run
+To stop the application: Press ``` CTRL+C``` in the terminal where Docker Compose is running, or run
 ```bash 
 docker-compose down
 ```

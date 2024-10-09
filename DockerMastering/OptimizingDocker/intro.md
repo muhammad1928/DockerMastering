@@ -24,7 +24,7 @@ cd node-multi-stage
 
 ## 2. Create a Simple Node.js Application
 
-Create a ```bash server.js``` file
+Create a ``` server.js``` file
 ```bash 
 nano server.js
 ```
@@ -75,7 +75,7 @@ Save and close the file
 
 
 ## 4. Write the Dockerfile with Multi-Stage Builds
-Create a ```bash Dockerfile``` in the same directory
+Create a ``` Dockerfile``` in the same directory
 ```bash 
 nano Dockerfile
 ```
@@ -134,16 +134,16 @@ Start a container from the optimized image
 ```bash 
 docker run -d -p 3000:3000 --name my_node_app node-multi-stage-app
 ```
-This command maps port 3000 on your host machine to port 3000 in the container, allowing you to access the app from ```bash http://localhost:3000```
+This command maps port 3000 on your host machine to port 3000 in the container, allowing you to access the app from ``` http://localhost:3000```
 
 
 ## 7. Test the Application
 
-Open a web browser or use ```bash curl``` to verify that the application is running
+Open a web browser or use ``` curl``` to verify that the application is running
 ```bash 
 curl http://localhost:3000
 ```
-You should see the output: ```bash Hello, Docker Multi-Stage Build!```
+You should see the output: ``` Hello, Docker Multi-Stage Build!```
 
 
 ## 8. Check the Image Size
@@ -152,7 +152,7 @@ List your Docker images to compare the size of your multi-stage build image
 ```bash 
 docker images
 ```
-You’ll notice that the ```bash node-multi-stage-app``` image is much smaller than it would have been if it included all the build dependencies.
+You’ll notice that the ``` node-multi-stage-app``` image is much smaller than it would have been if it included all the build dependencies.
 
 
 ## 9. Clean Up

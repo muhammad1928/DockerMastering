@@ -67,9 +67,9 @@ docker build -t my-nginx-image .
 ```
 
 Here’s what each part of the command does:
-- ```bash docker build``` docker build tells Docker to build an image.
-- ```bash -t my-nginx-image``` assigns the name ```bash my-nginx-image``` to the image.
-- ```bash .``` specifies the current directory as the build context (where Docker will look for the Dockerfile and any files to include in the image).
+- ``` docker build``` docker build tells Docker to build an image.
+- ``` -t my-nginx-image``` assigns the name ``` my-nginx-image``` to the image.
+- ``` .``` specifies the current directory as the build context (where Docker will look for the Dockerfile and any files to include in the image).
 
 ps. Docker will go through the steps in the Dockerfile, downloading the base Nginx image if it’s not already available, and then copying the HTML file.
 
@@ -90,24 +90,24 @@ Now that the image is built, you can create and run a container from it
 docker run -d -p 8080:80 --name my-nginx-container my-nginx-image
 ```
 You will see these in the command:
-- ```bash  docker run``` creates and starts a new container.
-- ```bash  -d``` runs the container in detached mode (in the background).
-- ```bash  -p 8080:80``` maps port 80 inside the container to port 8080 on your local machine, so you can access the Nginx server via ```bash  localhost:8080```.
-- ```bash --name my-nginx-container``` names the container ```bash my-nginx-container```.
-- ```bash my-nginx-image``` specifies the image to use.
+- ```  docker run``` creates and starts a new container.
+- ```  -d``` runs the container in detached mode (in the background).
+- ```  -p 8080:80``` maps port 80 inside the container to port 8080 on your local machine, so you can access the Nginx server via ```  localhost:8080```.
+- ``` --name my-nginx-container``` names the container ``` my-nginx-container```.
+- ``` my-nginx-image``` specifies the image to use.
 
 
-# Test the docker
+# 6. Test the docker
 To check if the container is running, list all running containers
 ```bash 
 docker ps
 ```
 
-You should see ```bash my-nginx-container``` in the list.
-Open a web browser and go to ```bash http://localhost:8080```. You should see the content from your ```bash index.html``` file displayed. If you’re running this on a server, use the server’s IP address instead.
+You should see ``` my-nginx-container``` in the list.
+Open a web browser and go to ``` http://localhost:8080```. You should see the content from your ``` index.html``` file displayed. If you’re running this on a server, use the server’s IP address instead.
 
 
-# Stop and Remove the Container
+# 7. Stop and Remove the Container
 
 To stop the container, use the following command
 ```bash 

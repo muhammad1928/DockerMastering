@@ -20,13 +20,13 @@ Let’s create a simple secret, like a password, and store it securely in Docker
 ```bash 
 echo "my_secret_password" | docker secret create my_db_password -
 ```
-Here, ```bash my_db_password``` is the name of the secret, and the secret data is piped directly into the Docker command.
+Here, ``` my_db_password``` is the name of the secret, and the secret data is piped directly into the Docker command.
 
 To verify the secret was created, list all available secrets
 ```bash 
 docker secret ls
 ```
-You should see ```bash my_db_password``` in the list.
+You should see ``` my_db_password``` in the list.
 
 
 # 3. Create a Service Using the Secret
@@ -35,13 +35,13 @@ Next, create a service and make the secret available to it. Let’s use an examp
 ```bash 
 docker service create --name my_nginx --secret my_db_password nginx
 ```
-The ```bash --secret``` flag makes ```bash my_db_password``` available to the ```bash my_nginx``` service.
+The ``` --secret``` flag makes ``` my_db_password``` available to the ``` my_nginx``` service.
 
 
 
 # 4. Access the Secret in the Container
 
-By default, Docker makes secrets available as files in ```bash /run/secrets/``` within the container.
+By default, Docker makes secrets available as files in ``` /run/secrets/``` within the container.
 Check that the secret is accessible in your running service by entering the container.
 ```bash 
 docker exec -it $(docker ps -q -f name=my_nginx) /bin/sh
@@ -51,7 +51,7 @@ Once inside the container, list the secrets directory
 ```bash 
 ls /run/secrets
 ```
-You should see ```bash my_db_password```. To view its content (only for testing purposes), you can use
+You should see ``` my_db_password```. To view its content (only for testing purposes), you can use
 ```bash 
 cat /run/secrets/my_db_password
 ```
@@ -59,7 +59,7 @@ Note: Be careful when accessing secret data, as it’s intended for use by the a
 
 
 # 5. Use the Secret in a Real Application 
-Secrets are best used within application code rather than manually inspected. For example, you might configure your application to read a database password from ```bash /run/secrets/my_db_password``` and connect securely to the database.
+Secrets are best used within application code rather than manually inspected. For example, you might configure your application to read a database password from ``` /run/secrets/my_db_password``` and connect securely to the database.
 
 
 # 6. Remove the Secret
@@ -77,7 +77,7 @@ docker secret ls
 
 
 # Example Using Docker Compose for Secrets
-If you’re using ```bash docker-compose``` with Docker Swarm, you can define secrets directly in your ```bash docker-compose.yml``` file:
+If you’re using ``` docker-compose``` with Docker Swarm, you can define secrets directly in your ``` docker-compose.yml``` file:
 
 ```bash
 version: "3.7"
