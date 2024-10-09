@@ -1,5 +1,5 @@
 {
-    "title": "Mastering Docker: Building, Networking, and Optimizing Containers with Multi-Stage Builds and Advanced Features",
+    "title": "Mastering in Docker:   and Advanced Features",
     "description": " ",
     "details": {
       "intro": {
@@ -12,20 +12,20 @@
             "text": "BuildingAndRunning/intro.md"
         },
         {
-            "title": "Setting up Docker Volumes for Persistent Storage",
-            "text": "DockerVolumes/intro.md"
+          "title": "Configuring Container Networking",
+          "text": "ConfigureContainer/intro.md"
         },
         {
-            "title": "Configuring Container Networking",
-            "text": "ConfigureContainer/intro.md"
-        },
-        {
-            "title": "Optimizing Docker Images with Multi-Stage Builds",
-            "text": "OptimizingDocker/intro.md"
+          "title": "Optimizing Docker Images with Multi-Stage Builds",
+          "text": "OptimizingDocker/intro.md"
         },
         {
           "title": "Using Docker Compose for Multi-Container Applications",
           "text": "MultiContainerApp2/intro.md"
+        },
+        {
+            "title": "Setting up Docker Volumes for Persistent Storage",
+            "text": "DockerVolumes/intro.md"
         },
         {
             "title": "Handling Secrets and Environment Variables in Docker",
