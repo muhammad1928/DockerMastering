@@ -1,15 +1,17 @@
 ## Implementing Health Checks for Containers
+
 Implementing health checks for Docker containers is crucial for maintaining the reliability and stability of your applications. Health checks allow Docker to monitor the status of containers and ensure that they are running as expected. If a container fails its health check, Docker can automatically restart it or take other actions, enhancing the resilience of your applications.
 
 
-# Why Implement Health Checks?
+## Why Implement Health Checks?
+
 - Automatic Recovery: Health checks allow Docker to restart containers that are not functioning properly, reducing downtime.
 - Improved Monitoring: By defining health checks, you gain insights into the running state of your applications.
 - Simplified Management: Health checks can automate responses to failures, making it easier to manage complex systems.
 
 
 
-# 1. Create a Simple Application (Create a project directory)
+## 1. Create a Simple Application (Create a project directory)
 
 Let's set up a basic web application using Flask that we can monitor. If you already have an application, you can skip to Step 3
 ```bash 
@@ -17,7 +19,7 @@ mkdir healthcheck_app
 cd healthcheck_app
 ```
 
-# Create app.py
+### Create app.py
 
 ```bash 
 nano app.py
@@ -43,7 +45,7 @@ if __name__ == "__main__":
 ```
 
 
-#  Create requirements.txt
+###  Create requirements.txt
 ```bash 
 nano requirements.txt
 ```
@@ -53,7 +55,7 @@ flask
 ```
 
 
-# 2. Create a Dockerfile
+## 2. Create a Dockerfile
 
 Now, create a Dockerfile to define how to build your application’s container
 ```bash 
@@ -73,7 +75,7 @@ CMD ["python", "app.py"]
 ```
 
 
-# 3. Define Health Checks in Docker Compose
+## 3. Define Health Checks in Docker Compose
 
 Create a ```bash docker-compose.yml``` file to define your application and specify the health check.
 ```bash 
@@ -103,7 +105,7 @@ services:
 - retries: How many consecutive failures are needed before considering the container unhealthy (5 retries).
 
 
-# 4. Build and Run the Application
+## 4. Build and Run the Application
 
 Build and start the containers
 ```bash 
@@ -111,7 +113,8 @@ docker-compose up --build
 ```
 
 
-# 5. Monitor Health Check Status
+## 5. Monitor Health Check Status
+
 After the containers are up, you can monitor the health status of the web service
 ```bash 
 docker ps
@@ -126,7 +129,8 @@ After invoking the ```bash /fail``` endpoint, Docker will eventually mark the co
 
 
 
-# 6. Clean Up
+## 6. Clean Up
+
 Stop and remove the containers
 ```bash 
 docker-compose down
@@ -134,7 +138,7 @@ docker-compose down
 
 
 
-# Benefits of Implementing Health Checks
+## Benefits of Implementing Health Checks
 - Automatic Recovery: Health checks enable Docker to restart containers that are not healthy, ensuring high availability.
 - Better Debugging: By monitoring health, you can diagnose issues in your application more effectively.
 - Improved Reliability: Continuous health checks help ensure that your application remains in a good state, preventing downtime and service interruptions.

@@ -1,7 +1,7 @@
 ## Using Docker Compose for Multi-Container Applications
 Using Docker Compose makes it easy to manage multi-container applications by defining all the services, networks, and volumes they need in a single file. This approach streamlines both the setup and deployment of applications that involve multiple interconnected containers.
 
-# Why Docker Compose is Useful
+## Why Docker Compose is Useful
 - Simplifies Setup: You can configure and spin up multiple containers with a single command, making it easier to manage complex environments.
 - Centralized Configuration: By using a docker-compose.yml file, you keep your application configuration in one place, improving readability and maintainability.
 - Enables Version Control: The configuration file is easy to version and share with others, enabling consistent deployments across different environments.
@@ -10,7 +10,7 @@ Using Docker Compose makes it easy to manage multi-container applications by def
 Let’s set up a basic application with a web server and a database using Docker Compose.
 
 
-#  1. Create a Project Directory
+##  1. Create a Project Directory
 
 Start by making a new directory for your project and navigating into it
 ```bash 
@@ -19,7 +19,7 @@ cd myapp
 ```
 
 
-# 2. Create Application Files
+## 2. Create Application Files
 
 For this example, let’s set up a simple Python Flask web application and a MySQL database.
 Create ```bash app.py```
@@ -53,7 +53,7 @@ mysql-connector-python
 ```
 
 
-# 3. Write the docker-compose.yml File
+## 3. Write the docker-compose.yml File
 
 Now, create a ```bash docker-compose.yml``` file that defines your services
 ```bash 
@@ -92,7 +92,7 @@ This file defines two services
 - DB: A MySQL container that sets up a MySQL database with environment variables for the root password and database name.
 
 
-#  4. Start the Multi-Container Application
+## 4. Start the Multi-Container Application
 
 In your terminal, run the following command to start both services
 ```bash 
@@ -101,7 +101,7 @@ docker-compose up
 Docker Compose will pull the images, set up the containers, and link them based on the configurations in ```bash docker-compose.yml ```
 
 
-# 5. Access the Application
+## 5. Access the Application
 
 Once the containers are running, open a web browser or use ```bash curl``` to check the Flask app
 ```bash 
@@ -110,7 +110,7 @@ curl http://localhost:5000
 You should see the message: ```bash "Hello from Flask and MySQL!"```
 
 
-# 6. Manage the Containers
+## 6. Manage the Containers
 
 To stop the application: Press ```bash CTRL+C``` in the terminal where Docker Compose is running, or run
 ```bash 
@@ -128,14 +128,14 @@ docker-compose up --build
 ```
 
 
-# 7. Clean Up
+## 7. Clean Up
 To remove the containers, networks, and other resources created by Docker Compose
 ```bash
 docker-compose down --volumes
 ```
 
 
-# Benefits of Using Docker Compose for Multi-Container Applications
+### Benefits of Using Docker Compose for Multi-Container Applications
 - Simple Configuration and Reusability: Define the entire application stack in a single docker-compose.yml file, which makes it easy to replicate or share.
 - Improved Networking: Containers are automatically connected to a common network, enabling service-to-service communication by container name.
 - Efficient Resource Management: Easily scale services by defining the number of replicas needed in the docker-compose.yml file.

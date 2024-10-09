@@ -1,6 +1,7 @@
 #### Building and Running a Basic Docker Container
 
 ## How to create build and run docker
+
 Start by creating a new directory for Docker and navigate to it using
 
 ```bash
@@ -9,6 +10,7 @@ cd my-docker-project
 ```
 
 # 1. Create a Docker file
+
 The Dockerfile is where you’ll define the image configuration. Create a new file named
 
 ```bash
@@ -32,6 +34,7 @@ The Dockerfile use the official Nginx image, copies a custom HTML file into the 
 
 
 # 2. Create HTML file
+
 Now, create an HTML file. This file should be named index.html and located in the same directory as your Dockerfile.
 
 ```bash
@@ -57,6 +60,7 @@ save and close the file. The Nginx will serve this html file.
 
 
 # 3. Build the Docker image
+
 we will use the Dockerfile to build a Docker image. Run the following command
 ```bash
 docker build -t my-nginx-image .
@@ -69,7 +73,9 @@ Here’s what each part of the command does:
 
 ps. Docker will go through the steps in the Dockerfile, downloading the base Nginx image if it’s not already available, and then copying the HTML file.
 
+
 # 4. Verify the Image
+
 Once the image build is complete, you can check if it was created successfully by listing all Docker images:
 ```bash 
 docker images
@@ -78,6 +84,7 @@ You should see *my-nginx-image* in the list.
 
 
 # 5. Run the Docker Container
+
 Now that the image is built, you can create and run a container from it
 ```bash 
 docker run -d -p 8080:80 --name my-nginx-container my-nginx-image
@@ -90,7 +97,7 @@ You will see these in the command:
 - ```bash my-nginx-image``` specifies the image to use.
 
 
-# 6. Test the docker
+# Test the docker
 To check if the container is running, list all running containers
 ```bash 
 docker ps
@@ -100,7 +107,8 @@ You should see ```bash my-nginx-container``` in the list.
 Open a web browser and go to ```bash http://localhost:8080```. You should see the content from your ```bash index.html``` file displayed. If you’re running this on a server, use the server’s IP address instead.
 
 
-# 7. Stop and Remove the Container
+# Stop and Remove the Container
+
 To stop the container, use the following command
 ```bash 
 docker stop my-nginx-container
