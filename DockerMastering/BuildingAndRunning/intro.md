@@ -8,7 +8,7 @@ mkdir my-docker-project
 cd my-docker-project
 ```
 
-# Create a Docker file
+# 1. Create a Docker file
 The Dockerfile is where you’ll define the image configuration. Create a new file named
 
 ```bash
@@ -31,7 +31,7 @@ EXPOSE 80
 The Dockerfile use the official Nginx image, copies a custom HTML file into the Nginx web directory, and exposes port 80 so that users can access the container from a web browser.
 
 
-# HTML file
+# 2. Create HTML file
 Now, create an HTML file. This file should be named index.html and located in the same directory as your Dockerfile.
 
 ```bash
@@ -56,7 +56,7 @@ Add some content to the html file. ex:
 save and close the file. The Nginx will serve this html file.
 
 
-# Build the Docker image
+# 3. Build the Docker image
 we will use the Dockerfile to build a Docker image. Run the following command
 ```bash
 docker build -t my-nginx-image .
@@ -69,14 +69,15 @@ Here’s what each part of the command does:
 
 ps. Docker will go through the steps in the Dockerfile, downloading the base Nginx image if it’s not already available, and then copying the HTML file.
 
-# Verify the Image
+# 4. Verify the Image
 Once the image build is complete, you can check if it was created successfully by listing all Docker images:
 ```bash 
 docker images
 ```
 You should see *my-nginx-image* in the list.
 
-# Run the Docker Container
+
+# 5. Run the Docker Container
 Now that the image is built, you can create and run a container from it
 ```bash 
 docker run -d -p 8080:80 --name my-nginx-container my-nginx-image
@@ -89,7 +90,7 @@ You will see these in the command:
 - ```bash my-nginx-image``` specifies the image to use.
 
 
-# test the docker
+# 6. Test the docker
 To check if the container is running, list all running containers
 ```bash 
 docker ps
@@ -99,7 +100,7 @@ You should see ```bash my-nginx-container``` in the list.
 Open a web browser and go to ```bash http://localhost:8080```. You should see the content from your ```bash index.html``` file displayed. If you’re running this on a server, use the server’s IP address instead.
 
 
-# Stop and Remove the Container
+# 7. Stop and Remove the Container
 To stop the container, use the following command
 ```bash 
 docker stop my-nginx-container

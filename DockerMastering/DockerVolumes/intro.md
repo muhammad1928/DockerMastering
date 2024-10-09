@@ -7,7 +7,7 @@ By default, when a container is deleted, all its data is lost because container 
 Here’s a step-by-step guide on creating and using Docker volumes to manage persistent storage.
 
 
-# Create a Docker Volume
+# 1. Create a Docker Volume
 Use the ```bash docker volume create``` command to create a new volume. Let’s call it ```bash my_data_volume```
 ```bash 
 docker volume create my_data_volume
@@ -20,7 +20,7 @@ docker volume ls
 You will see the new volume ```bash my_data_volume``` in the list.
 
 
-# Create a Simple Container Using the Volume
+# 2. Create a Simple Container Using the Volume
 In this example, we’ll use the official Nginx image and mount the volume to persist web server data.
 Run a container that uses the volume
 ```bash 
@@ -34,7 +34,7 @@ This is what each option does in the command:
 ```bash -v my_data_volume:/usr/share/nginx/html``` mounts the ```bash my_data_volume``` volume to the container’s web server directory ```bash (/usr/share/nginx/html)```, where Nginx serves HTML files. This ensures that any files in this directory are stored on the host in the volume and persist beyond the container’s lifecycle.
 
 
-# Add Data to the Volume
+# 3. Add Data to the Volume
 You can add a file to the volume by copying this directly into the running container. 
 ```bash 
 docker exec -it my_nginx /bin/bash
@@ -49,7 +49,7 @@ exit
 ```
 
 
-# Verify the Data Persistence
+# 4. Verify the Data Persistence
 Access the container’s Nginx server from a browser by visiting ```bash http://localhost:8080```. You should see the HTML content you just added.
 
 Now, stop and remove the container
@@ -65,13 +65,13 @@ docker run -d --name new_nginx -p 8080:80 -v my_data_volume:/usr/share/nginx/htm
 Check ```bash http://localhost:8080``` again. You’ll see the same HTML content, proving that the data persisted even after the original container was removed.
 
 
-# Remove the Volume 
+# 5. Remove the Volume 
 If you no longer need the volume and want to free up space, remove the volume with (make sure that the volume is not in use by any other containers, otherwise the code will fail): 
 ```bash 
 docker volume rm my_data_volume
 ```
 
-Why Use Docker Volumes?
+# Why Use Docker Volumes?
 - Data Persistence: Volumes ensure that important data outlives containers, making them ideal for applications that generate data, like databases and CMSs.
 - Container Sharing: Volumes allow you to share data between multiple containers, enabling a seamless flow of information. For example, you might have a web server and a database container both accessing the same data volume.
 - Backup and Restore: Docker volumes can easily be backed up and restored, making data management more straightforward than with bind mounts or temporary container storage.
