@@ -10,16 +10,20 @@ Here’s a step-by-step guide on creating and using Docker volumes to manage per
 
 ## 1. Create a Docker Volume
 
-Use the ```docker volume create``` command to create a new volume. Let’s call it ``` my_data_volume```
+To create a new docker volume we use the ``` docker volume create`` 
+command. 
+Let’s call it:
+``` my_data_volume``
+
 ```bash 
 docker volume create my_data_volume
 ```
 
-Check if the volume was created successfully by listing all volumes
+Check if the volume was created successfully by listing all volumes.
 ```bash 
 docker volume ls
 ```
-You will see the new volume ```bash my_data_volume``` in the list.
+You will see the new volume ``` my_data_volume``` in the list.
 
 
 ## 2. Create a Simple Container Using the Volume
