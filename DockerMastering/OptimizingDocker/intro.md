@@ -10,7 +10,7 @@ Multi-stage builds in Docker allow you to optimize Docker images by reducing the
 
 
 
-## tutorial
+## Step-by-Step Guide to Using Multi-Stage Builds
 Let’s walk through a practical example of using multi-stage builds to create a lightweight image for a simple Node.js application. In this example, you’ll compile the app in a larger image and then copy only the built app into a minimal runtime image.
 
 
