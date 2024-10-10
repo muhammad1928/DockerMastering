@@ -30,6 +30,7 @@ COPY index.html /usr/share/nginx/html/index.html
 EXPOSE 80
 
 ```
+press ``` CTRL + X ``` to exit the nano
 The Dockerfile use the official Nginx image, copies a custom HTML file into the Nginx web directory, and exposes port 80 so that users can access the container from a web browser.
 
 
