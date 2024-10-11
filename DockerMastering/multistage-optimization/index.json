@@ -1,0 +1,32 @@
+{
+    "title": "Docker Multi-Stage Build Optimization",
+    "description": "Learn how to optimize Docker images using multi-stage builds.",
+    "backend": {
+        "imageid": "ubuntu"
+    },
+    "details": {
+        "intro": "intro.md",
+        "steps": [
+            {
+                "title": "Step 1: Create a Basic Docker Image",
+                "text": "step1.md",
+                "verify": {
+                    "script": "step1-verify.sh",
+                    "hint": "Make sure you have built the Docker image using the command 'docker build -t basic-image .'"
+                }
+            },
+            {
+                "title": "Step 2: Optimize the Docker Image",
+                "text": "step2.md",
+                "verify": {
+                    "script": "step2-verify.sh",
+                    "hint": "Make sure you have built the optimized Docker image using the command 'docker build -t optimized-image .'"
+                }
+            },
+            {
+                "title": "Step 3: Compare the Results",
+                "text": "step3.md"
+            }
+        ]
+    }
+}
