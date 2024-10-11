@@ -1,0 +1,11 @@
+{
+    "title": "Mastering Docker",
+    "description": "Learn advanced Docker concepts and techniques.",
+    "items": [
+      {
+        "path": "multistage-optimization",
+        "title": "Docker Multi-Stage Build Optimization",
+        "description": "Learn how to optimize Docker images using multi-stage builds."
+      }
+    ]
+  }
