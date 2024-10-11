@@ -6,6 +6,11 @@
         "path": "multistage-optimization",
         "title": "Docker Multi-Stage Build Optimization",
         "description": "Learn how to optimize Docker images using multi-stage builds."
-      }
+      },
+			{
+				"path": "secure-secrets",
+				"title": "Handling Secrets and Environment Variables in Docker",
+				"description": "Securely pass sensitive information using Docker secrets and environment variables."
+			}
     ]
   }
