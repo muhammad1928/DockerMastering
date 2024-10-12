@@ -1,9 +1,18 @@
 #!/bin/bash
 
-if docker-compose logs combined-demo | grep -q "Environment Variable: environment-secret" && \
-   docker-compose logs combined-demo | grep -q "my-sensitive-data"; then
-    exit 0
+# Fetch the logs of the running container
+log_output=$(docker-compose logs 2>/dev/null)
+
+# Expected secret value
+expected_secret="super-secret-value"
+
+# Check if the expected secret value is present in the logs
+if echo "$log_output" | grep -q "The secret is $expected_secret"; then
+  echo "Verification successful: The secret is correctly passed to the container."
+  exit 0
 else
-    echo "Either the environment variable or Docker secret was not handled correctly."
-    exit 1
+  echo "Verification failed: The secret is not correctly passed."
+  echo "Hint: Ensure that you've set the environment variable MY_SECRET_ENV before running the service."
+  echo "Try running: export MY_SECRET_ENV=\"super-secret-value\" and then docker-compose up --build"
+  exit 1
 fi
