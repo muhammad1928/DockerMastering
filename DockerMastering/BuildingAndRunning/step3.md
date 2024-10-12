@@ -9,7 +9,7 @@ chmod +x step3-setup.sh
 
 Second, you will need to run the script by typing this in the terminal.
 ```bash
-./setup_index.sh
+./step3-setup.sh
 ```
 
 The automatically created script will look like this
