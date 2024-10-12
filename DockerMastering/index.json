@@ -7,32 +7,31 @@
 			"text": "introduction-docker/intro.md"
 		},
 		"steps": [
-			{"steps": [
-					{ 
-					  "title": "Building and Running",
-					  "description": "This is the description of course TWO",
-					  "text": "BuildingAndRunning/step1.md",
-					  "verify": "BuildingAndRunning/step1-verify.sh" },
-					{ 
-						"title": "Building and Running 2",
-					  	"description": "This is the description of course TWO 2",
-					  	"text": "BuildingAndRunning/step2.md",
-						"verify": "BuildingAndRunning/step2-verify.sh" },
-					{ 	"title": "Building and Running 3",
-						"description": "This is the description of course TWO 3",
-						"text": "BuildingAndRunning/step3.md",
-						"verify": "BuildingAndRunning/step3-verify.sh" },
-					{ 
-						"title": "Building and Running 4 ",
-					 	"description": "This is the description of course TWO 4",
-					  	"text": "BuildingAndRunning/step4.md",
-						"verify": "BuildingAndRunning/step4-verify.sh" },
-					{ 
-						"title": "Building and Running 5",
-					  	"description": "This is the description of course TWO 5",
-					  	"text": "BuildingAndRunning/step5.md",
-						"verify": "BuildingAndRunning/step5-verify.sh" }
-						]},
+			{ 
+				"title": "Building and Running",
+				"description": "This is the description of course TWO",
+				"text": "BuildingAndRunning/step1.md",
+				"verify": "BuildingAndRunning/step1-verify.sh" },
+			{ 
+				"title": "Building and Running 2",
+				"description": "This is the description of course TWO 2",
+				"text": "BuildingAndRunning/step2.md",
+				"verify": "BuildingAndRunning/step2-verify.sh" },
+			{ 	"title": "Building and Running 3",
+				"description": "This is the description of course TWO 3",
+				"text": "BuildingAndRunning/step3.md",
+				"verify": "BuildingAndRunning/step3-verify.sh" },
+			{ 
+				"title": "Building and Running 4 ",
+				"description": "This is the description of course TWO 4",
+				"text": "BuildingAndRunning/step4.md",
+				"verify": "BuildingAndRunning/step4-verify.sh" },
+			{ 
+				"title": "Building and Running 5",
+				"description": "This is the description of course TWO 5",
+				"text": "BuildingAndRunning/step5.md",
+				"verify": "BuildingAndRunning/step5-verify.sh" 
+			},
 			{
 				"title": "Multi-Stage Build Optimization",
 				"text": "multistage-optimization/instructions.md",
