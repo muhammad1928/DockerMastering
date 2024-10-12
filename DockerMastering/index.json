@@ -8,26 +8,6 @@
 		},
 		"steps": [
 			{
-				"title": "Building and Running docker",
-				"text": "BuildingAndRunning/intro.md"
-			},
-			{
-				"title": "Configuring Container Networking",
-				"text": "ConfigureContainer/intro.md"
-			},
-			{
-				"title": "Optimizing Docker Images with Multi-Stage Builds",
-				"text": "OptimizingDocker/intro.md"
-			},
-			{
-				"title": "Using Docker Compose for Multi-Container Applications",
-				"text": "MultiContainerApp2/intro.md"
-			},
-			{
-				"title": "Setting up Docker Volumes for Persistent Storage",
-				"text": "DockerVolumes/intro.md"
-			},
-			{
 				"title": "Handling Secrets and Environment Variables in Docker",
 				"text": "secure-secrets/instructions.md"
 			},
