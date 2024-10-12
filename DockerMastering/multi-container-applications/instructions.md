@@ -45,7 +45,7 @@ In the same directory, create a folder named `html` and inside that, a file name
 Now, you can start your multi-container application by running the following command in your project directory:
 
 ```bash
-docker-compose up
+docker-compose up -d
 ```
 
 ## Step 4: Verify the Web Application Locally

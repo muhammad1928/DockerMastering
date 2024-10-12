@@ -6,11 +6,9 @@ In this scenario, you will learn how to securely manage sensitive information in
 2. Using Docker secrets for secure secret management.
 3. Combining environment variables and Docker secrets in a Docker Compose setup.
 
-You will also learn about the security risks associated with using environment variables and how Docker secrets can help mitigate these risks.
-
 ## Step 1: Passing Environment Variables to Docker
 
-1. Create a simple Dockerfile that uses environment variables:
+1. Create a simple `Dockerfile` that uses environment variables:
 
     ```dockerfile
     # Dockerfile
@@ -32,31 +30,40 @@ You will also learn about the security risks associated with using environment v
 
 3. Verify that the container outputs the value of `MY_SECRET`.
 
+    Expected output:
+    ```bash
+    The secret is super-secret
+    ```
+
+---
+
 ## Step 2: Using Docker Secrets for Secure Management
 
-1. Initialize Docker Swarm if it isn't already:
+We’ll now move on to using Docker Secrets, ensuring it's as simple as possible.
+
+1. **Initialize Docker Swarm (only needs to be done once):**
 
     ```bash
     docker swarm init
     ```
 
-2. Create a secret named `my_docker_secret`:
+2. **Create a Docker secret:**
 
     ```bash
     echo "my-sensitive-data" | docker secret create my_docker_secret -
     ```
 
-3. Update the Dockerfile to access the secret:
+3. **Update the `Dockerfile` to read from the secret:**
 
     ```dockerfile
     # Dockerfile
     FROM ubuntu:latest
 
     # Read the secret from the file mounted by Docker
-    CMD cat /run/secrets/my_docker_secret
+    CMD cat /run/secrets/my_docker_secret || echo "Secret not found"
     ```
 
-4. Create a `docker-compose.yml` file to use the secret:
+4. **Create a simple `docker-compose.yml` file to use the secret:**
 
     ```yaml
     version: "3.7"
@@ -72,17 +79,31 @@ You will also learn about the security risks associated with using environment v
         external: true
     ```
 
-5. Build and run the service:
+5. **Deploy the stack using Swarm (instead of using `docker-compose up`):**
 
     ```bash
-    docker-compose up --build
+    docker stack deploy -c docker-compose.yml my_stack
     ```
 
-The container should output the contents of the secret.
+6. **Check the logs to verify that the secret is accessible:**
+
+    ```bash
+    docker service logs my_stack_secret-demo
+    ```
+
+    Expected output:
+
+    ```bash
+    my-sensitive-data
+    ```
+
+---
 
 ## Step 3: Combining Environment Variables and Docker Secrets
 
-1. Update the `docker-compose.yml` file to use both environment variables and secrets:
+We will now combine both environment variables and Docker secrets.
+
+1. **Update the `docker-compose.yml` to use both environment variables and secrets:**
 
     ```yaml
     version: "3.7"
@@ -100,19 +121,30 @@ The container should output the contents of the secret.
         external: true
     ```
 
-2. Update the `Dockerfile` to print both the environment variable and the Docker secret:
+2. **Update the `Dockerfile` to print both the environment variable and the Docker secret:**
 
     ```dockerfile
     # Dockerfile
     FROM ubuntu:latest
 
-    CMD echo "Environment Variable: $ENV_SECRET" && cat /run/secrets/my_docker_secret
+    CMD echo "Environment Variable: $ENV_SECRET" && cat /run/secrets/my_docker_secret || echo "Secret not found"
     ```
 
-3. Run the service with the environment variable:
+3. **Run the service with the environment variable:**
 
     ```bash
-    MY_ENV_SECRET="environment-secret" docker-compose up --build
+    MY_ENV_SECRET="environment-secret" docker stack deploy -c docker-compose.yml my_stack
     ```
 
-4. Verify that both the environment variable and the Docker secret are correctly displayed.
+4. **Check the logs to verify both the environment variable and the secret are displayed:**
+
+    ```bash
+    docker service logs my_stack_combined-demo
+    ```
+
+    Expected output:
+
+    ```bash
+    Environment Variable: environment-secret
+    my-sensitive-data
+    ```
