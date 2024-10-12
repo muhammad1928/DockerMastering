@@ -4,12 +4,32 @@
 	"details": {
 		"intro": {
 			"title": "Introduction to Docker",
-			"text": "introdocker/intro.md"
+			"text": "introduction-docker/intro.md"
 		},
 		"steps": [
 			{
+				"title": "Multi-Stage Build Optimization",
+				"text": "multistage-optimization/instructions.md",
+				"verify": {
+					"script": "multistage-optimization/verify.sh",
+					"hint": "Docker images not found, make sure that you have built the images correct with the correct names. Also make sure that the secrets are the same as in the instructions."
+				}
+			},
+			{
+				"title": "Using Docker Compose for Multi-Container Applications",
+				"text": "multi-container-applications/instructions.md",
+				"verify": {
+					"script": "multistage-optimization/verify.sh",
+					"hint": "Verification failed: Web server is not serving the correct content. Hint: Make sure Docker Compose is running correctly. Try running: docker-compose up."
+				}
+			},
+			{
 				"title": "Handling Secrets and Environment Variables in Docker",
-				"text": "secure-secrets/instructions.md"
+				"text": "secure-secrets/instructions.md",
+				"verify": {
+					"script": "secure-secrets/verify.sh",
+					"hint": "Docker images not found, make sure that you have built the images correct with the correct names."
+				}
 			},
 			{
 				"title": "Implementing Health Checks for Containers",
