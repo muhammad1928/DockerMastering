@@ -1,0 +1,44 @@
+{
+	"title": "Mastering in Docker",
+	"description": "Do you want to master Docker? This path will guide you through the basics of Docker, optimizing Docker images, setting up Docker volumes, and more.",
+	"details": {
+		"intro": {
+			"title": "Introduction to Docker",
+			"text": "introdocker/intro.md"
+		},
+		"steps": [
+			{
+				"title": "Building and Running docker",
+				"text": "BuildingAndRunning/intro.md"
+			},
+			{
+				"title": "Configuring Container Networking",
+				"text": "ConfigureContainer/intro.md"
+			},
+			{
+				"title": "Optimizing Docker Images with Multi-Stage Builds",
+				"text": "OptimizingDocker/intro.md"
+			},
+			{
+				"title": "Using Docker Compose for Multi-Container Applications",
+				"text": "MultiContainerApp2/intro.md"
+			},
+			{
+					"title": "Setting up Docker Volumes for Persistent Storage",
+					"text": "DockerVolumes/intro.md"
+			},
+			{
+					"title": "Handling Secrets and Environment Variables in Docker",
+					"text": "secureSecrets/instructions.md",
+					"verify": "verify.sh"
+			},
+			{
+					"title": "Implementing Health Checks for Containers",
+					"text": "ImplementingChecks/intro.md"
+			}
+		]
+	},
+	"backend": {
+		"imageid": "ubuntu"
+	}
+}
