@@ -24,17 +24,17 @@
 				"text": "MultiContainerApp2/intro.md"
 			},
 			{
-					"title": "Setting up Docker Volumes for Persistent Storage",
-					"text": "DockerVolumes/intro.md"
+				"title": "Setting up Docker Volumes for Persistent Storage",
+				"text": "DockerVolumes/intro.md"
 			},
 			{
-					"title": "Handling Secrets and Environment Variables in Docker",
-					"text": "secureSecrets/instructions.md",
-					"verify": "verify.sh"
+				"title": "Handling Secrets and Environment Variables in Docker",
+				"text": "secure-secrets/instructions.md",
+				"verify": "verify.sh"
 			},
 			{
-					"title": "Implementing Health Checks for Containers",
-					"text": "ImplementingChecks/intro.md"
+				"title": "Implementing Health Checks for Containers",
+				"text": "ImplementingChecks/intro.md"
 			}
 		]
 	},
