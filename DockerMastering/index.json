@@ -8,7 +8,6 @@
 		},
 		"steps": [
 			{
-				"steps": [
 					{ 
 					  "title": "Building and Running",
 					  "description": "This is the description of course TWO",
@@ -33,8 +32,6 @@
 					  	"description": "This is the description of course TWO 5",
 					  	"text": "BuildingAndRunning/step5.md",
 						"verify": "BuildingAndRunning/step5-verify.sh" }
-				]
-				  
 			},
 			{
 				"title": "Multi-Stage Build Optimization",
