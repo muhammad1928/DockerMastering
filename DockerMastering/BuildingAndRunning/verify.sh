@@ -18,7 +18,7 @@ else
     echo "✅ Dockerfile exists."
     # Check Dockerfile content
     if ! grep -q "FROM nginx:latest" "$DOCKERFILE" || \
-       ! grep -q "COPY index.html/usr/share/nginx/html/index.html" "$DOCKERFILE" || \
+       ! grep -q "COPY index.html /usr/share/nginx/html/index.html" "$DOCKERFILE" || \
        ! grep -q "EXPOSE 80" "$DOCKERFILE"; then
         echo "❌ Dockerfile content is incorrect. Please ensure it matches the required configuration."
         exit 1
