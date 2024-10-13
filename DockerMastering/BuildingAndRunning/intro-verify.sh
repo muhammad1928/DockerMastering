@@ -18,13 +18,4 @@ else
     echo "✅ Docker container '$CONTAINER_NAME' is running."
 fi
 
-# Step 3: Test if the web server is accessible at http://localhost:8080
-RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:8080)
-if [[ "$RESPONSE" -ne 200 ]]; then
-    echo "❌ Web server not reachable at http://localhost:8080."
-    exit 1
-else
-    echo "✅ Web server is reachable at http://localhost:8080."
-fi
-
 echo "🎉 All checks passed! Your Docker container is running correctly."

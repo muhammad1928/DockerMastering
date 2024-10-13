@@ -30,7 +30,7 @@ COPY index.html /usr/share/nginx/html/index.html
 
 EXPOSE 80
 ```
-After this press `CTRL + O` to save the dockerfile and `CTRL + X and ENTER` to exit the dockerfile.
+After this press `CTRL + O and ENTER` to save the dockerfile and `CTRL + X` to exit the dockerfile.
 
 The Dockerfile use the official Nginx image, copies a custom HTML file into the Nginx web directory, and exposes port 80 so that users can access the container from a web browser.
 
@@ -58,28 +58,21 @@ Add some content to the html file:
 </body>
 </html>
 ```
-Save and close the file. The Nginx will serve this html file.
+After this press `CTRL + O and ENTER` to save the index.html file and `CTRL + X` to exit the html file.
+The Nginx will serve this html file.
 
 
 ## Step 4. Build the Docker image
 
-we will use the Dockerfile to build a Docker image. Run the following command
+We will use the Dockerfile to build a Docker image. Run the following command
 ```bash
 docker build -t my-nginx-image .
 ```
 
 Here’s what each part of the command does:
-- 
-`docker build`
- docker build tells Docker to build an image.
-- 
-`-t my-nginx-image`
- assigns the name 
-`my-nginx-image`
- to the image.
-- 
-`.`
- specifies the current directory as the build context (where Docker will look for the Dockerfile and any files to include in the image).
+- `docker build` docker build tells Docker to build an image.
+- `-t my-nginx-image` assigns the name `my-nginx-image` to the image.
+- `.` specifies the current directory as the build context (where Docker will look for the Dockerfile and any files to include in the image).
 
 ps. Docker will go through the steps in the Dockerfile, downloading the base Nginx image if it’s not already available, and then copying the HTML file.
 
