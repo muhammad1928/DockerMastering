@@ -9,6 +9,7 @@ if [[ ! -d "$DIRECTORY" || ! -f "$DOCKERFILE_PATH" ]]; then
     exit 1
 else
     echo "✅ Directory and Dockerfile found."
+    exit 0
 fi
 
 # Step 2: Check if the HTML file exists
@@ -18,6 +19,7 @@ if [[ ! -f "$HTML_FILE_PATH" ]]; then
     exit 1
 else
     echo "✅ HTML file 'index.html' found."
+    exit 0
 fi
 
 # Step 3: Build the Docker image
@@ -28,6 +30,7 @@ if [[ "$(docker images -q $IMAGE_NAME)" == "" ]]; then
     exit 1
 else
     echo "✅ Docker image '$IMAGE_NAME' built successfully."
+    exit 0
 fi
 
 # Step 4: Run the Docker container
@@ -38,6 +41,7 @@ if [[ "$(docker ps -q -f name=$CONTAINER_NAME)" == "" ]]; then
     exit 1
 else
     echo "✅ Docker container '$CONTAINER_NAME' is running."
+    exit 0
 fi
 
 # Step 5: Test the web server's response at http://localhost:8080
@@ -47,6 +51,7 @@ if [[ "$RESPONSE" -ne 200 ]]; then
     exit 1
 else
     echo "✅ Web server is reachable at http://localhost:8080."
+    exit 0
 fi
 
 # Step 6: Verify the HTML content served by the web server
@@ -54,6 +59,7 @@ EXPECTED_CONTENT="<h1>Hello, Docker!</h1>"
 ACTUAL_CONTENT=$(curl -s http://localhost:8080 | grep -o "$EXPECTED_CONTENT")
 if [[ "$ACTUAL_CONTENT" == "$EXPECTED_CONTENT" ]]; then
     echo "✅ The HTML content served by the web server is correct."
+    exit 0
 else
     echo "❌ The HTML content served by the web server is incorrect."
     exit 1
