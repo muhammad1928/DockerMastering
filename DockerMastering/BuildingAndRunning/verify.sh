@@ -27,7 +27,6 @@ else
     fi
 fi
 
-
 # Step 3: Check if the Docker image 'my-nginx-image' exists
 IMAGE_NAME="my-nginx-image"
 if [[ "$(docker images -q $IMAGE_NAME 2> /dev/null)" == "" ]]; then
