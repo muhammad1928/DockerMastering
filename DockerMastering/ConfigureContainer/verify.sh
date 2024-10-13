@@ -34,11 +34,6 @@ else
     exit 1
 fi
 
-# Step 4: Cleanup Verification, automated.
-echo "Cleaning up..."
-docker rm -f web_server redis_db app_server > /dev/null 2>&1
-docker network rm my_bridge_network > /dev/null 2>&1
-echo "Containers and network removed successfully."
 
 echo "All verifications passed!"
 exit 0

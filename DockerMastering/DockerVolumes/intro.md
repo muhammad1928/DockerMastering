@@ -77,6 +77,8 @@ docker run -d --name new_nginx -p 8080:80 -v my_data_volume:/usr/share/nginx/htm
 Check `http://localhost:8080` again. You’ll see the same HTML content, proving that the data persisted even after the original container was removed.
 
 
+Now when all the steps are done, Click on the `Check` button before running the remove command below. else it will not verify
+
 ## Step 5. Remove the Volume 
 If you no longer need the volume and want to free up space, remove the volume with (make sure that the volume is not in use by any other containers, otherwise the code will fail): 
 ```bash 

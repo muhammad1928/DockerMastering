@@ -62,6 +62,8 @@ For example, you could add a container that uses a different image, but still co
 docker run -d --name app_server --network my_bridge_network alpine
 ```
 
+Now when all the steps are done, Click on the `Check` button before running the cleanup. else it will not verify
+
 
 ## Step 6. Clean Up the Network
 

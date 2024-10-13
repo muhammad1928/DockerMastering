@@ -59,8 +59,4 @@ else
     exit 1
 fi
 
-# Step 7: Clean up - Stop and remove the container
-docker stop $CONTAINER_NAME && docker rm $CONTAINER_NAME
-echo "✅ Docker container cleaned up."
-
 echo "🎉 All checks passed! Your Docker container is set up and running correctly with the custom HTML content."

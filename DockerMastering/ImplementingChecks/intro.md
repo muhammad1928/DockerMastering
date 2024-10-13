@@ -130,6 +130,8 @@ curl http://localhost:5000/fail
 After invoking the `/fail` endpoint, Docker will eventually mark the container as unhealthy if the health check fails consistently.
 
 
+Now when all the steps are done, Click on the `Check` button before running the cleanup. else it will not verify
+
 
 ## 6. Clean Up
 

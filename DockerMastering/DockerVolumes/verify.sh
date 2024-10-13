@@ -52,9 +52,5 @@ else
     exit 1
 fi
 
-# Step 6: Clean up by removing the container and volume
-docker stop $NEW_CONTAINER_NAME && docker rm $NEW_CONTAINER_NAME
-docker volume rm $VOLUME_NAME
-echo "✅ Volume and containers cleaned up."
 
 echo "🎉 All checks passed! Your Docker volume setup and data persistence are correct."
