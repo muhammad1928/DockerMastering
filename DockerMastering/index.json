@@ -10,7 +10,7 @@
 			{ 
 				"title": "Building and Running",
 				"text": "BuildingAndRunning/introduction.md",
-				"verify": "BuildingAndRunning/intro-verify.sh" 
+				"verify": "BuildingAndRunning/verify.sh" 
 			},
 			{ 
 				"title": "Configuring Container Networking",
