@@ -8,9 +8,9 @@ By default, when a container is deleted, all its data is lost because container 
 Here’s a step-by-step guide on creating and using Docker volumes to manage persistent storage.
 
 
-## 1. Create a Docker Volume
+## Step 1. Create a Docker Volume
 
-To create a new docker volume we use the ``docker volume create ``
+To create a new docker volume we use the `docker volume create`
 command. 
 Let’s call it:
 ``my_data_volume``
