@@ -13,7 +13,7 @@ Implementing health checks for Docker containers is crucial for maintaining the 
 
 ## 1. Create a Simple Application (Create a project directory)
 
-Let's set up a basic web application using Flask that we can monitor. If you already have an application, you can skip to Step 3
+Let's set up a basic web application using Flask that we can monitor. 
 ```bash 
 mkdir healthcheck_app
 cd healthcheck_app
@@ -25,7 +25,7 @@ cd healthcheck_app
 nano app.py
 ```
 Add the following code
-```bash 
+```py 
 from flask import Flask
 import time
 
@@ -43,16 +43,17 @@ def fail():
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
 ```
-
+After this press `CTRL + O and ENTER` to save the python file and `CTRL + X` to exit the python file.
 
 ###  Create requirements.txt
 ```bash 
 nano requirements.txt
 ```
 Add the following ( we only need flask)
-```bash 
+```txt 
 flask
 ```
+After this press `CTRL + O and ENTER` to save the textfile and `CTRL + X` to exit the textfile.
 
 
 ## 2. Create a Dockerfile
@@ -63,7 +64,7 @@ nano Dockerfile
 ```
 
 Add the following content
-```bash 
+```Dockerfile 
 FROM python:3.9-slim
 
 WORKDIR /app
@@ -73,17 +74,17 @@ COPY . .
 
 CMD ["python", "app.py"]
 ```
-
+After this press `CTRL + O and ENTER` to save the dockerfile and `CTRL + X` to exit the dockerfile.
 
 ## 3. Define Health Checks in Docker Compose
 
-Create a ``` docker-compose.yml``` file to define your application and specify the health check.
+Create a `docker-compose.yml` file to define your application and specify the health check.
 ```bash 
 nano docker-compose.yml
 ```
 
 Add the following content
-```bash
+```yml
 version: "3.8"
 
 services:
@@ -97,6 +98,7 @@ services:
       timeout: 10s
       retries: 5
 ```
+After this press `CTRL + O and ENTER` to save the yml file and `CTRL + X` to exit the yml.
 #### In this configuration:
 
 - The healthcheck section specifies a command that Docker will run to check the health of the container.
@@ -119,13 +121,13 @@ After the containers are up, you can monitor the health status of the web servic
 ```bash 
 docker ps
 ```
-Look for the ``` STATUS``` column. It should display ``` healthy``` after a few intervals if everything is working fine.
+Look for the `STATUS` column. It should display `healthy` after a few intervals if everything is working fine.
 
-Simulate a Failure: To test the health check, you can simulate a failure by accessing the ``` /fail``` endpoint. You can do this using a web browser or a command line:
+Simulate a Failure: To test the health check, you can simulate a failure by accessing the `/fail` endpoint. You can do this using a web browser or a command line:
 ```bash 
 curl http://localhost:5000/fail
 ```
-After invoking the ``` /fail``` endpoint, Docker will eventually mark the container as unhealthy if the health check fails consistently.
+After invoking the `/fail` endpoint, Docker will eventually mark the container as unhealthy if the health check fails consistently.
 
 
 
@@ -144,4 +146,4 @@ docker-compose down
 - Improved Reliability: Continuous health checks help ensure that your application remains in a good state, preventing downtime and service interruptions.
 
 
-Implementing health checks is an essential practice for running reliable and resilient applications with Docker. Let me know if you have any questions or need further assistance!
+Implementing health checks is an essential practice for running reliable and resilient applications with Docker. 

@@ -2,7 +2,7 @@
 
 Setting up Docker volumes is essential for ensuring that your data is stored persistently and not lost when a container is stopped or removed. 
 
-Why Persistent Storage is Important
+**Why Persistent Storage is Important**
 By default, when a container is deleted, all its data is lost because container storage is ephemeral (temporary). This behavior is fine for stateless applications, but for applications like databases or services that generate important data, you need a way to persist data beyond the life of the container. Docker volumes provide this persistence by allowing you to store data outside the container on the host system.
 
 Here’s a step-by-step guide on creating and using Docker volumes to manage persistent storage.
@@ -11,9 +11,7 @@ Here’s a step-by-step guide on creating and using Docker volumes to manage per
 ## Step 1. Create a Docker Volume
 
 To create a new docker volume we use the `docker volume create`
-command. 
-Let’s call it:
-`my_data_volume`
+command. Let’s call it: `my_data_volume`
 
 ```bash 
 docker volume create my_data_volume
