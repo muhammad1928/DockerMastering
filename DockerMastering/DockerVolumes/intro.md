@@ -13,7 +13,7 @@ Here’s a step-by-step guide on creating and using Docker volumes to manage per
 To create a new docker volume we use the `docker volume create`
 command. 
 Let’s call it:
-``my_data_volume``
+`my_data_volume`
 
 ```bash 
 docker volume create my_data_volume
@@ -23,10 +23,10 @@ Check if the volume was created successfully by listing all volumes.
 ```bash 
 docker volume ls
 ```
-You will see the new volume ``` my_data_volume``` in the list.
+You will see the new volume `my_data_volume` in the list.
 
 
-## 2. Create a Simple Container Using the Volume
+## Step 2. Create a Simple Container Using the Volume
 
 In this example, we’ll use the official Nginx image and mount the volume to persist web server data.
 Run a container that uses the volume
@@ -34,18 +34,18 @@ Run a container that uses the volume
 docker run -d --name my_nginx -p 8080:80 -v my_data_volume:/usr/share/nginx/html nginx
 ```
 
-### This is what each option does in the command:
+#### This is what each option does in the command:
 
-- ``` -d ``` runs the container in detached mode.
+- `-d` runs the container in detached mode.
 
-- ``` --name my_nginx``` give names to the container ``` my_nginx```.
+- `--name my_nginx` give names to the container `my_nginx`.
 
-- ``` -p 8080:80``` maps port 80 on the container to port 8080 on your local machine.
+- `-p 8080:80` maps port 80 on the container to port 8080 on your local machine.
 
-- ``` -v my_data_volume:/usr/share/nginx/html``` mounts the ``` my_data_volume``` volume to the container’s web server directory ``` (/usr/share/nginx/html)```, where Nginx serves HTML files. This ensures that any files in this directory are stored on the host in the volume and persist beyond the container’s lifecycle.
+- `-v my_data_volume:/usr/share/nginx/html` mounts the `my_data_volume` volume to the container’s web server directory `(/usr/share/nginx/html)`, where Nginx serves HTML files. This ensures that any files in this directory are stored on the host in the volume and persist beyond the container’s lifecycle.
 
 
-## 3. Add Data to the Volume
+## Step 3. Add Data to the Volume
 
 You can add a file to the volume by copying this directly into the running container. 
 ```bash 
@@ -63,8 +63,8 @@ exit
 ```
 
 
-## 4. Verify the Data Persistence
-Access the container’s Nginx server from a browser by visiting ``` http://localhost:8080```. You should see the HTML content you just added.
+## Step 4. Verify the Data Persistence
+Access the container’s Nginx server from a browser by visiting `http://localhost:8080`. You should see the HTML content you just added.
 
 Now, stop and remove the container
 ```bash 
@@ -76,10 +76,10 @@ Run a new container with the same volume mounted
 ```bash 
 docker run -d --name new_nginx -p 8080:80 -v my_data_volume:/usr/share/nginx/html nginx
 ```
-Check ``` http://localhost:8080``` again. You’ll see the same HTML content, proving that the data persisted even after the original container was removed.
+Check `http://localhost:8080` again. You’ll see the same HTML content, proving that the data persisted even after the original container was removed.
 
 
-## 5. Remove the Volume 
+## Step 5. Remove the Volume 
 If you no longer need the volume and want to free up space, remove the volume with (make sure that the volume is not in use by any other containers, otherwise the code will fail): 
 ```bash 
 docker volume rm my_data_volume
