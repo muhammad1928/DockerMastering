@@ -2,6 +2,12 @@
 
 Docker is a platform that lets you package, distribute, and run applications in isolated environments called **containers**. Containers are lightweight and portable, containing everything needed to run an application, ensuring consistency across different environments.
 
+<div style="text-align: center;">
+    <img src="images/image1.png" alt="Description of the image" style="width:50%;">
+</div>
+
+Source: https://www.spiceworks.com/tech/big-data/articles/what-is-docker/
+
 ## Key Concepts of Docker
 
 - **Images**: Templates that define what’s inside a container.
@@ -17,6 +23,12 @@ Docker is a platform that lets you package, distribute, and run applications in 
 - **Resource efficiency** with lightweight containers.
 - **Rapid deployment** for CI/CD.
 - **Isolation** for security.
+
+<div style="text-align: center;">
+    <img src="images/image2.png" alt="Description of the image" style="width:50%;">
+</div>
+
+Source: https://www.codementor.io/blog/docker-technology-5x1kilcbow
 
 ## This tutorial will cover
 
