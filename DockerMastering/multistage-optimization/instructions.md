@@ -6,6 +6,12 @@ The goal here will be to understand the use of multi-stage builds and how it can
 
 ## Step 1: Create a Basic Docker Image
 
+<!-- This has to be done. -->
+First we need to remove previous docker containers
+```bash
+docker rm -f web-server redis_db app-server
+docker network rm my-bridge-network
+```
 1. Create a file named `Dockerfile` with the following content:
 
     ```dockerfile

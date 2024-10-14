@@ -4,12 +4,6 @@ In this tutorial, you will learn how to define and manage a basic multi-containe
 
 ## Step 1: Create the `docker-compose.yml` file
 
-<!-- This has to be done. -->
-First we need to remove previous docker containers
-```bash
-docker rm -f web-server redis_db app-server
-docker network rm my-bridge-network
-```
 
 Create a file called `docker-compose.yml` in your project directory. This file defines the services, networks, and volumes for your multi-container application.
 

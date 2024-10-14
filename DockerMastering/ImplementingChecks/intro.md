@@ -33,12 +33,12 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return "Hello, the application is running!"
+    return 'Hello, the application is running!'
 
 @app.route('/fail')
 def fail():
     time.sleep(10)  # Simulate a delay
-    return "This route is not healthy!", 500
+    return 'This route is not healthy!', 500
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
@@ -69,7 +69,7 @@ FROM python:3.9-slim
 
 WORKDIR /app
 COPY requirements.txt .
-RUN pip install -r requirements.txt
+RUN pip install -r requirements.txt 
 COPY . .
 
 CMD ["python", "app.py"]
@@ -85,8 +85,7 @@ nano docker-compose.yml
 
 Add the following content
 ```yml
-version: "3.8"
-
+version: "3" 
 services:
   web:
     build: .
@@ -116,6 +115,12 @@ docker-compose up --build
 
 
 ## 5. Monitor Health Check Status
+
+You can open a new termianl and type
+```bash
+curl http://127.0.0.1:5000
+```
+to see if the app is responding
 
 After the containers are up, you can monitor the health status of the web service
 ```bash 
