@@ -1,4 +1,4 @@
-#### Building and Running a Basic Docker Container
+# Building and Running a Basic Docker Container
 
 ## How to create build and run docker Step 1.
 
@@ -93,31 +93,17 @@ Now that the image is built, you can create and run a container from it
 docker run -d -p 8080:80 --name my-nginx-container my-nginx-image
 ```
 You will see these in the command:
-- 
-`docker run`
- creates and starts a new container.
-- 
-`-d`
- runs the container in detached mode (in the background).
-- 
-`-p 8080:80`
- maps port 80 inside the container to port 8080 on your local machine, so you can access the Nginx server via localhost:8080
-.
-- 
-`--name my-nginx-container`
- names the container 
-`my-nginx-container`
-.
-- 
-`my-nginx-image`
- specifies the image to use.
 
+
+1. `docker run` creates and starts a new container.
+2. `-d` runs the container in detached mode (in the background).
+3. `-p 8080:80` maps port 80 inside the container to port 8080 on your local machine, so you can access the Nginx server via localhost:8080.
+4. `--name my-nginx-container` names the container `my-nginx-container`.
+5. `my-nginx-image` specifies the image to use.
 
 ## Step 7. Test the docker
 To check if the container is running, list all running containers
 ```bash 
 docker ps
 ```
-
-
 You should see your docker container.
