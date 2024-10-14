@@ -9,8 +9,8 @@
 		"steps": [
 			{ 
 				"title": "Building and Running",
-				"text": "BuildingAndRunning/introduction.md",
-				"verify": "BuildingAndRunning/verify.sh" 
+				"text": "BuildingAndRunning/introduction.md"
+
 			},
 			{ 
 				"title": "Setting up Docker Volume for Persistant Storage",

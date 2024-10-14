@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Step 1: Check if the Docker volume 'my_data_volume' exists
-VOLUME_NAME="my_data_volume"
+VOLUME_NAME="my-data-volume"
 if [[ "$(docker volume ls -q -f name=$VOLUME_NAME)" == "" ]]; then
     echo "❌ Docker volume '$VOLUME_NAME' not found. Please create the volume first."
     exit 1
@@ -11,7 +11,7 @@ else
 fi
 
 # Step 2: Check if the Docker container 'my_nginx' is running with the volume mounted
-CONTAINER_NAME="my_nginx"
+CONTAINER_NAME="my-nginx"
 if [[ "$(docker ps -q -f name=$CONTAINER_NAME)" == "" ]]; then
     echo "❌ Docker container '$CONTAINER_NAME' is not running. Please run the container with the volume."
     exit 1
