@@ -1,68 +1,57 @@
 #!/bin/bash
 
-# Step 1: Check if the directory and Dockerfile exist
-DIRECTORY="my-docker-project"
-DOCKERFILE_PATH="$DIRECTORY/Dockerfile"
-
-if [[ ! -d "$DIRECTORY" || ! -f "$DOCKERFILE_PATH" ]]; then
-    echo "❌ Directory '$DIRECTORY' or Dockerfile not found. Please follow Step 1 and Step 2 to set up the project and create the Dockerfile."
-    exit 1
-else
-    echo "✅ Directory and Dockerfile found."
-    exit 0
-fi
-
-# Step 2: Check if the HTML file exists
-HTML_FILE_PATH="$DIRECTORY/index.html"
-if [[ ! -f "$HTML_FILE_PATH" ]]; then
-    echo "❌ HTML file 'index.html' not found in '$DIRECTORY'. Please create the HTML file."
-    exit 1
-else
-    echo "✅ HTML file 'index.html' found."
-    exit 0
-fi
-
-# Step 3: Build the Docker image
-IMAGE_NAME="my-nginx-image"
-docker build -t $IMAGE_NAME $DIRECTORY
-if [[ "$(docker images -q $IMAGE_NAME)" == "" ]]; then
-    echo "❌ Docker image '$IMAGE_NAME' failed to build."
-    exit 1
-else
-    echo "✅ Docker image '$IMAGE_NAME' built successfully."
-    exit 0
-fi
-
-# Step 4: Run the Docker container
-CONTAINER_NAME="my-nginx-container"
-docker run -d -p 8080:80 --name $CONTAINER_NAME $IMAGE_NAME
+# Step 1: Check if the Docker container 'web' is running
+CONTAINER_NAME="healthcheck_app"  
 if [[ "$(docker ps -q -f name=$CONTAINER_NAME)" == "" ]]; then
-    echo "❌ Docker container '$CONTAINER_NAME' failed to start."
+    echo "❌ Docker container '$CONTAINER_NAME' is not running. Please start the container first."
     exit 1
 else
     echo "✅ Docker container '$CONTAINER_NAME' is running."
-    exit 0
 fi
 
-# Step 5: Test the web server's response at http://localhost:8080
-RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:8080)
+# Step 2: Check if the container is marked as healthy
+HEALTHY_STATUS="healthy"
+CURRENT_STATUS=$(docker inspect --format='{{.State.Health.Status}}' "$CONTAINER_NAME" 2>/dev/null)
+if [[ "$CURRENT_STATUS" == "$HEALTHY_STATUS" ]]; then
+    echo "✅ Container '$CONTAINER_NAME' is healthy."
+else
+    echo "❌ Container '$CONTAINER_NAME' is not healthy. Current status: $CURRENT_STATUS."
+    exit 1
+fi
+
+# Step 3: Simulate a failure by hitting the /fail endpoint
+echo "Simulating a failure by accessing the /fail endpoint..."
+curl -s http://localhost:5000/fail > /dev/null
+
+# Step 4: Check if the container becomes unhealthy
+UNHEALTHY_STATUS="unhealthy"
+MAX_RETRIES=10
+SLEEP_INTERVAL=5
+
+for i in $(seq 1 $MAX_RETRIES); do
+    CURRENT_STATUS=$(docker inspect --format='{{.State.Health.Status}}' "$CONTAINER_NAME")
+    echo "Attempt $i/$MAX_RETRIES: Current status: $CURRENT_STATUS"
+
+    if [[ "$CURRENT_STATUS" == "$UNHEALTHY_STATUS" ]]; then
+        echo "✅ Container '$CONTAINER_NAME' is marked as unhealthy as expected."
+        break
+    fi
+
+    if [[ $i -eq $MAX_RETRIES ]]; then
+        echo "❌ Container '$CONTAINER_NAME' did not become unhealthy after failure. Exiting."
+        exit 1
+    fi
+
+    sleep $SLEEP_INTERVAL
+done
+
+# Step 5: Test the web server's response on http://localhost:5000
+RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:5000)
 if [[ "$RESPONSE" -ne 200 ]]; then
-    echo "❌ Web server is not reachable at http://localhost:8080."
+    echo "❌ Web server is not reachable at http://localhost:5000 or is not serving correctly."
     exit 1
 else
-    echo "✅ Web server is reachable at http://localhost:8080."
-    exit 0
+    echo "✅ Web server is reachable at http://localhost:5000."
 fi
 
-# Step 6: Verify the HTML content served by the web server
-EXPECTED_CONTENT="<h1>Hello, Docker!</h1>"
-ACTUAL_CONTENT=$(curl -s http://localhost:8080 | grep -o "$EXPECTED_CONTENT")
-if [[ "$ACTUAL_CONTENT" == "$EXPECTED_CONTENT" ]]; then
-    echo "✅ The HTML content served by the web server is correct."
-    exit 0
-else
-    echo "❌ The HTML content served by the web server is incorrect."
-    exit 1
-fi
-
-echo "🎉 All checks passed! Your Docker container is set up and running correctly with the custom HTML content."
+echo "🎉 All checks passed! Your Docker container setup and health check configuration are correct."
