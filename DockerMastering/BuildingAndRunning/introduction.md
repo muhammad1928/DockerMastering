@@ -119,4 +119,5 @@ To check if the container is running, list all running containers
 docker ps
 ```
 
+
 You should see your docker container.

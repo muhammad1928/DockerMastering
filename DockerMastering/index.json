@@ -10,32 +10,26 @@
 			{ 
 				"title": "Building and Running",
 				"text": "BuildingAndRunning/introduction.md"
-
 			},
 			{ 
 				"title": "Setting up Docker Volume for Persistant Storage",
-				"text": "DockerVolumes/intro.md",
-				"verify": "DockerVolumes/verify.sh" 
+				"text": "DockerVolumes/intro.md"
 			},
 			{ 
 				"title": "Configuring Container Networking",
-				"text": "ConfigureContainer/intro.md",
-				"verify": "ConfigureContainer/verify.sh" 
+				"text": "ConfigureContainer/intro.md"
 			},
 			{
 				"title": "Multi-Stage Build Optimization",
-				"text": "multistage-optimization/instructions.md",
-				"verify": "multistage-optimization/verify.sh"
+				"text": "multistage-optimization/instructions.md"
 			},
 			{
 				"title": "Using Docker Compose for Multi-Container Applications",
-				"text": "multi-container-applications/instructions.md",
-				"verify": "multistage-optimization/verify.sh"
+				"text": "multi-container-applications/instructions.md"
 			},
 			{
 				"title": "Handling Secrets and Environment Variables in Docker",
-				"text": "secure-secrets/instructions.md",
-				"verify": "secure-secrets/verify.sh"
+				"text": "secure-secrets/instructions.md"
 			},
 			{
 				"title": "Implementing Health Checks for Containers",

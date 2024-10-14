@@ -41,11 +41,22 @@ In the output, you should see both `web-server` and `redis_db` listed as attache
 
 ## Step 4. To test Communication Between Containers
 
-Let’s check if the web server container can reach the Redis container. Use the `docker exec` command to access the `web-server` container and ping the `redis_db`:
+Let’s check if the web server container can reach the Redis container. Use the `docker exec` command to access the `web-server` container and ping the.
+
+First we need to install some utils like "ping"
+```bash
+docker exec -it web-server apt-get update
+docker exec -it web-server apt-get install iputils-ping
+```
+
+You have to press **y** when installation is being processed. afterwards we can start pinging the db by:
+`redis_db`:
 ```bash 
 docker exec -it web-server ping redis_db
 ```
 If the network configuration is correct, you should see ping responses from `redis_db`, indicating that the two containers can communicate.
+
+Press `CTRL + C` to stop the ping. and click on `Check` to continue
 
 ### Use Container Hostnames in Applications
 
@@ -63,8 +74,6 @@ For example, you could add a container that uses a different image, but still co
 docker run -d --name app-server --network my-bridge-network alpine
 ```
 
-Now when all the steps are done, Click on the `Check` button before running the cleanup. else it will not verify
-
 
 ## Step 6. Clean Up the Network
 
@@ -73,6 +82,7 @@ Once you’re done, you can remove the containers and the network
 docker rm -f web-server redis_db app-server
 docker network rm my-bridge-network
 ```
+
 
 
 ## Why is Container Networking Important?
