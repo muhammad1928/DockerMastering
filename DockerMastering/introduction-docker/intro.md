@@ -2,9 +2,7 @@
 
 Docker is a platform that lets you package, distribute, and run applications in isolated environments called **containers**. Containers are lightweight and portable, containing everything needed to run an application, ensuring consistency across different environments.
 
-<div style="text-align: center;">
-    <img src="https://github.com/muhammad1928/DockerMastering/blob/main/DockerMastering/introduction-docker/images/image1.png" alt="Description of the image" style="width:50%;">
-</div>
+![Introduction to Docker, Why use it?](https://raw.githubusercontent.com/muhammad1928/DockerMastering/main/DockerMastering/introduction-docker/images/image1.png)
 
 Source: https://www.spiceworks.com/tech/big-data/articles/what-is-docker/
 
@@ -24,9 +22,7 @@ Source: https://www.spiceworks.com/tech/big-data/articles/what-is-docker/
 - **Rapid deployment** for CI/CD.
 - **Isolation** for security.
 
-<div style="text-align: center;">
-    <img src="https://github.com/muhammad1928/DockerMastering/blob/main/DockerMastering/introduction-docker/images/image2.png" alt="Description of the image" style="width:50%;">
-</div>
+![Overview of Docker](https://raw.githubusercontent.com/muhammad1928/DockerMastering/main/DockerMastering/introduction-docker/images/image2.png)
 
 Source: https://www.codementor.io/blog/docker-technology-5x1kilcbow
 
