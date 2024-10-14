@@ -74,17 +74,6 @@ For example, you could add a container that uses a different image, but still co
 docker run -d --name app-server --network my-bridge-network alpine
 ```
 
-
-## Step 6. Clean Up the Network
-
-Once you’re done, you can remove the containers and the network
-```bash
-docker rm -f web-server redis_db app-server
-docker network rm my-bridge-network
-```
-
-
-
 ## Why is Container Networking Important?
 - Container networking allows multiple containers to communicate, enabling complex, multi-tier applications to function. By defining how containers connect to each other and to external networks, you can:
 - Isolate services: Restrict container communication to certain containers, improving security.

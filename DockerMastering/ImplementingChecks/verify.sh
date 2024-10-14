@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Step 1: Check if the Docker container 'web' is running
-CONTAINER_NAME="healthcheck_app"  
+CONTAINER_NAME="healthcheck_app_web"  
 if [[ "$(docker ps -q -f name=$CONTAINER_NAME)" == "" ]]; then
     echo "❌ Docker container '$CONTAINER_NAME' is not running. Please start the container first."
     exit 1

@@ -1,4 +1,4 @@
-## Setting up Docker Volumes for Persistent Storage
+# Setting up Docker Volumes for Persistent Storage
 
 Setting up Docker volumes is essential for ensuring that your data is stored persistently and not lost when a container is stopped or removed. 
 
@@ -69,12 +69,16 @@ exit
 Now when all the steps are done, Click on the `Check` button before running the cleanup. 
 
 ## Step 4. Verify the Data Persistence
-Access the container’s Nginx server from a browser by visiting `http://localhost:8080`. You should see the HTML content you just added.
+Access the container’s Nginx server from a browser by visiting `http://localhost:8080`. You should see the HTML content you just added. Do this utilizing the curl command:
+
+```bash 
+curl http://localhost:8080
+```
 
 Now, stop and remove the container
 ```bash 
-docker stop my_nginx
-docker rm my_nginx
+docker stop my-nginx
+docker rm my-nginx
 ```
 
 Run a new container with the same volume mounted
@@ -83,11 +87,17 @@ docker run -d --name new-nginx -p 8080:80 -v my-data-volume:/usr/share/nginx/htm
 ```
 Check `http://localhost:8080` again. You’ll see the same HTML content, proving that the data persisted even after the original container was removed.
 
-
 Now when all the steps are done, Click on the `Check` button before running the remove command below. else it will not verify
 
 ## Step 5. Remove the Volume 
 If you no longer need the volume and want to free up space, remove the volume with (make sure that the volume is not in use by any other containers, otherwise the code will fail): 
+Now, stop and remove the container
+
+```bash 
+docker stop new-nginx
+docker rm new-nginx
+```
+
 ```bash 
 docker volume rm my-data-volume
 ```
@@ -98,8 +108,6 @@ docker volume rm my-data-volume
 - Container Sharing: Volumes allow you to share data between multiple containers, enabling a seamless flow of information. For example, you might have a web server and a database container both accessing the same data volume.
 - Backup and Restore: Docker volumes can easily be backed up and restored, making data management more straightforward than with bind mounts or temporary container storage.
 - Performance: Volumes can be more efficient on storage, especially with large datasets, as they are managed outside the container’s file system.
-
-
 
 ## Docker Volumes mechanism
 
@@ -113,5 +121,3 @@ Docker volumes are a mechanism for persisting data outside of the container's fi
 - Shared volumes: Volumes can be shared between multiple containers.
 - Named volumes: Volumes can be given names for easier management.
 - Data management: Volumes can be created, inspected, and removed using Docker commands.
-
-

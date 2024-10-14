@@ -1,4 +1,4 @@
-## Implementing Health Checks for Containers
+# Implementing Health Checks for Containers
 
 Implementing health checks for Docker containers is crucial for maintaining the reliability and stability of your applications. Health checks allow Docker to monitor the status of containers and ensure that they are running as expected. If a container fails its health check, Docker can automatically restart it or take other actions, enhancing the resilience of your applications.
 
