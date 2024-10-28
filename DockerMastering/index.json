@@ -34,13 +34,11 @@
 			},
 			{
 				"title": "Handling Secrets and Environment Variables in Docker",
-				"text": "secure-secrets/instructions.md",
-				"verify": "secure-secrets/verify.sh"
+				"text": "secure-secrets/instructions.md"
 			},
 			{
 				"title": "Implementing Health Checks for Containers",
-				"text": "ImplementingChecks/intro.md",
-				"verify": "ImplementingChecks/verify.sh" 
+				"text": "ImplementingChecks/intro.md"
 			}
 		]
 	},
