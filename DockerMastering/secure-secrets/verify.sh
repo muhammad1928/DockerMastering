@@ -1,8 +1,6 @@
 #!/bin/bash
 
-expected_secret="super-secret-value"
-
-if [[ "$MY_SECRET_ENV" == "$expected_secret" ]]; then
+if [ "$MY_SECRET_ENV" == "super-secret-value" ]; then
   exit 0
 else
   exit 1
