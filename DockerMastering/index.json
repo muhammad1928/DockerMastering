@@ -7,6 +7,31 @@
 			"text": "introduction-docker/intro.md"
 		},
 		"steps": [
+			{ 
+				"title": "Building and Running",
+				"text": "BuildingAndRunning/introduction.md",
+				"verify": "BuildingAndRunning/verify.sh" 
+			},
+			{ 
+				"title": "Setting up Docker Volume for Persistant Storage",
+				"text": "DockerVolumes/intro.md",
+				"verify": "DockerVolumes/verify.sh" 
+			},
+			{ 
+				"title": "Configuring Container Networking",
+				"text": "ConfigureContainer/intro.md",
+				"verify": "ConfigureContainer/verify.sh" 
+			},
+			{
+				"title": "Multi-Stage Build Optimization",
+				"text": "multistage-optimization/instructions.md",
+				"verify": "multistage-optimization/verify.sh"
+			},
+			{
+				"title": "Using Docker Compose for Multi-Container Applications",
+				"text": "multi-container-applications/instructions.md",
+				"verify": "multistage-optimization/verify.sh"
+			},
 			{
 				"title": "Handling Secrets and Environment Variables in Docker",
 				"text": "secure-secrets/instructions.md",
